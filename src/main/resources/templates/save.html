@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Saurav">
+  <link href="/absnews/save/css/bootstrap.min.css" rel="stylesheet">
+  <title>Responsive Registration Form Template</title>
+</head>
+
+<body class="bg-light">
+<div class="container">
+  <div class="py-5 text-center">
+
+    <h2>Insert</h2>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form action="/add" method="post">
+        <div class="form-group">
+          <label for="country">Seçin</label>
+          <select class="custom-select d-block w-100" id="country" required>
+            <option value="">Choose...</option>
+            <option>Tədbir</option>
+            <option>Trainer</option>
+            <option>İdmançı</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid country.
+          </div>
+        </div>
+        <div class="form-group">
+          <label >Name</label>
+          <input type="text" class="form-control" id="firstName" name="name"   required>
+        </div>
+
+        <div class="form-group">
+          <label >Surname</label>
+          <input type="text" class="form-control" id="surName" name="surName"   required>
+        </div>
+        <div class="form-group">
+          <label >FatherName</label>
+          <input type="text" class="form-control" id="father" name="fatherName" required>
+        </div>
+        <div class="form-group">
+          <label >Doğum Tarixi</label>
+          <input type="date" class="form-control" id="date" name="date"  required>
+        </div>
+        <div class="form-group">
+          <label >Haqqımda</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1"  name="detailedİnformation" rows="10"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="radio" id="html" name="fav_language" value="Kisi"><label for="html">Kişi</label><br>
+          <input type="radio" id="css" name="fav_language" value="Qadin"> <label for="css">Qadın</label><br>
+        </div>
+        <div class="form-group">
+          <label class="label">Sekil elave Et</label>
+          <label>
+            <input class="input--style-4" type="file" name="image">
+          </label>
+        </div>
+          <hr class="mb-4">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+        </form>
+    </div>
+  </div>
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2020-2021 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+</body>
+</html>

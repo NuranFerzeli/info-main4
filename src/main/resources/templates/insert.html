@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Insert</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/absnews/24-news/css/media_query.css" rel="stylesheet" type="text/css"/>
+    <link href="/absnews/24-news/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="/absnews/24-news/css/animate.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="/absnews/24-news/css/style_1.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 400px;
+        }
+    </style>
+  <!--   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+   -->
+</head>
+
+<body>
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w960">
+        <div class="card card-4">
+            <div class="card-body">
+                <h2 class="title"><span th:text="${news}"> Əlavə Et</span></h2>
+                <form method="POST" action="/addNews" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label" th:text="${name}"></label>
+                                <input class="input--style-4" type="text" name="newsName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label" th:text="${description}"></label>
+                                <input class="input--style-4" type="text" name="newsDescription">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label" th:text="${date}"></label>
+                                <div class="input-group-icon">
+                                    <input class="input--style-4 js-datepicker" type="datetime-local" name="newsDate">
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="... ck-editor__editable ck-editor__editable_inline ...">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <textarea rows="10" name="content" id="editor" style="max-width: 100%;"></textarea>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Sekil elave Et</label>
+                                    <label>
+                                        <input class="input--style-4" type="file" name="image">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="p-t-15">
+                        <button class="btn btn--radius-2 btn--blue" type="submit">Əlavə Et</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Jquery JS-->
+<script src="/absnews/24-news/Insert/vendor/jquery/jquery.min.js"></script>
+<!-- Vendor JS-->
+<script src="/absnews/24-news/Insert/vendor/select2/select2.min.js"></script>
+<script src="/absnews/24-news/Insert/vendor/datepicker/moment.min.js"></script>
+<script src="/absnews/24-news/Insert/vendor/datepicker/daterangepicker.js"></script>
+
+<!-- Main JS-->
+<script src="/absnews/24-news/Insert/js/global.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        }
+
+        );
+</script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
