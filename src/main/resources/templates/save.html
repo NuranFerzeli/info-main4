@@ -18,14 +18,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <form action="/add" method="post">
+      <form action="/add" method="post"  enctype="multipart/form-data" >
         <div class="form-group">
           <label for="country">Seçin</label>
-          <select class="custom-select d-block w-100" id="country" required>
+          <select class="custom-select d-block w-100" name="option" id="country" required>
             <option value="">Choose...</option>
-            <option>Tədbir</option>
-            <option>Trainer</option>
-            <option>İdmançı</option>
+            <option value="tedbir">Tədbir</option>
+            <option value="trainer">Trainer</option>
+            <option value="sportsmen">İdmançı</option>
           </select>
           <div class="invalid-feedback">
             Please select a valid country.
@@ -33,16 +33,16 @@
         </div>
         <div class="form-group">
           <label >Name</label>
-          <input type="text" class="form-control" id="firstName" name="name"   required>
+          <input type="text" class="form-control" id="firstName" name="name"  required>
         </div>
 
         <div class="form-group">
           <label >Surname</label>
-          <input type="text" class="form-control" id="surName" name="surName"   required>
+          <input type="text" class="form-control" id="surName" name="surName"   >
         </div>
         <div class="form-group">
           <label >FatherName</label>
-          <input type="text" class="form-control" id="father" name="fatherName" required>
+          <input type="text" class="form-control" id="father" name="fatherName" >
         </div>
         <div class="form-group">
           <label >Doğum Tarixi</label>
@@ -56,10 +56,16 @@
           <input type="radio" id="html" name="fav_language" value="Kisi"><label for="html">Kişi</label><br>
           <input type="radio" id="css" name="fav_language" value="Qadin"> <label for="css">Qadın</label><br>
         </div>
+<!--        <div class="form-group">-->
+<!--          <label class="label">Sekil elave Et</label>-->
+<!--          <label>-->
+<!--            <input class="input&#45;&#45;style-4" type="file" name="image">-->
+<!--          </label>-->
+<!--        </div>-->
         <div class="form-group">
           <label class="label">Sekil elave Et</label>
-          <label>
-            <input class="input--style-4" type="file" name="image">
+           <label>
+            <input type="file"  name="image" multiple="multiple">
           </label>
         </div>
           <hr class="mb-4">
@@ -76,5 +82,9 @@
     </ul>
   </footer>
 </div>
+<script src="//github.com/fyneworks/multifile/blob/master/jQuery.MultiFile.min.js" type="text/javascript" language="javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="assets/js/arda.js">
+</script>
 </body>
 </html>

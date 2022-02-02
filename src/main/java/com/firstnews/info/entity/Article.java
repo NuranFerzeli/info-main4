@@ -26,6 +26,6 @@ public class Article extends BaseEntity {
     private String imagePath;
     @Column(name="article_Date")
     private Date newsDate;
-    @Enumerated(EnumType.STRING)
-    private ArticleStatus articleStatus ;
+    @Column(name="st")
+    private boolean status;
 }

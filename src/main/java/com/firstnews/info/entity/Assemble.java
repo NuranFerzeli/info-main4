@@ -3,6 +3,7 @@ package com.firstnews.info.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -10,17 +11,18 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-@Table(name = "federeation")
-public class Federation {
+@Table(name = "assemble")
+public class Assemble {
     @Id()
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "context")
-    private String text;
-    @Column(name = "imagePath")
-    private String imagePath;
-    @Column(name = "name",length=4000)
-    private String name;
+    @Column(name = "assembleName",length = 400)
+    String assembleName;
     @Column(name="st")
     private boolean status;
+    @Column(name = "cdate")
+    LocalDate cdate;
+    @Column(name = "udate")
+    LocalDate udate;
+
 }

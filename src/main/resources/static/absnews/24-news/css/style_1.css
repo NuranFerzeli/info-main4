@@ -596,7 +596,7 @@ a, a:hover {
 .btn_mange_pagging:hover, .btn_mange_pagging:focus {
     background: #222;
     color: #fff !important;
-    font-weight: 800
+    font-weight: 600
 }
 
 .btn_pagging:hover, .btn_pagging:focus {

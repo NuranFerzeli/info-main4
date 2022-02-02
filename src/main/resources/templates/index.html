@@ -7,24 +7,16 @@
 <meta name="copyright" content="MACode ID, https://macodeid.com/">
 <link rel="stylesheet" href="/assets/css/bootstrap.css">
 <link rel="stylesheet" href="/assets/css/maicons.css">
-<link rel="stylesheet" href="/assets/vendor/animate/animate.css">
 <link rel="stylesheet" href="/assets/vendor/owl-carousel/css/owl.carousel.css">
-<link rel="stylesheet" href="/assets/vendor/fancybox/css/jquery.fancybox.css">
 <link rel="stylesheet" href="/assets/css/theme.css">
-  <script src="/assets/js/jquery-3.5.1.min.js"></script> <!-- pox budu-->
-  <script src="/assets/js/bootstrap.bundle.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>abc</title>
-  <link href="/absnews/24-news/css/media_query.css" rel="stylesheet" type="text/css"/>
-  <link href="/absnews/24-news/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link href="/absnews/24-news/css/animate.css" rel="stylesheet" type="text/css"/>
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-  <link href="/absnews/24-news/css/style_1.css" rel="stylesheet" type="text/css"/>
-  <!-- Modernizr JS -->
-  <script src="/absnews/24-news/js/modernizr-3.5.0.min.js"></script>
+<script src="/assets/js/jquery-3.5.1.min.js"></script> <!-- pox budu-->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="/absnews/24-news/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link href="/absnews/24-news/css/style_1.css" rel="stylesheet" type="text/css"/>
+<!-- Modernizr JS -->
 </head>
 
 <body>
@@ -87,12 +79,12 @@
             </div>
           </div>
           <div class="hero-carousel-item">
-            <img  src="/absnews/24-news/images/2.jpg" alt="">
-            <div class="img-caption">>
+            <img  src="/absnews/24-news/images/3.jpg" alt="">
+            <div class="img-caption">
             </div>
           </div>
           <div class="hero-carousel-item">
-            <img  src="/absnews/24-news/images/3.jpg"  alt="">
+            <img  src="/absnews/24-news/images/4.jpg"  alt="">
             <div class="img-caption">
             </div>
           </div>
@@ -109,7 +101,6 @@
             <div class="subhead">About Us</div>
             <h2 class="title-section">We are <span class="fg-primary">Professional Teams</span> to Growth your Business</h2>
             <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of</p>
-
             <a href="about.html" class="btn btn-primary mt-4">Read More</a>
           </div>
           <div class="col-lg-6 py-3">
@@ -133,7 +124,7 @@
           </div>
           <div class="col-lg-6 py-3">
             <div class="about-img">
-              <img th:src="@{${'/photos/' + imageName}}" alt="Photo upload confirmation"
+              <img th:src="@{${'/photos/' + imageName}}" alt="Photo upload confirmation">
             </div>
           </div>
         </div>
@@ -147,7 +138,7 @@
 
           <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of</p>
 
-          <a href="about.html" class="btn btn-primary mt-4">Read More</a>
+          <a href="/assembly" class="btn btn-primary mt-4">Read More</a>
         </div>
         <div class="col-lg-6 py-3">
           <div class="about-img">
@@ -255,18 +246,33 @@
       </div> <!-- .container -->
     </div> <!-- .page-section -->
   </main>
-
   <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 py-3">
-          <h3><span class="fg-primary">Naxçıvan Do Karate Federasiyası.</span></h3>
+          <h3>Naxcvivan<span class="fg-primary"> &nbsp;Karate do Federasiyasi.</span></h3>
         </div>
         <div class="col-lg-3 py-3">
-          <h5>Əlaqə</h5>
+          <h5>Contact Information</h5>
           <p>301 The Greenhouse, Custard Factory, London, E2 8DY.</p>
           <p>Email: example@mail.com</p>
           <p>Phone: +00 112323980</p>
+        </div>
+        <div class="col-lg-3 py-3">
+          <form action="/search" method="post">
+            <h5>Axtarış</h5>
+            <select style="  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;  " required>
+              <option value="">Seçin</option>
+              <option value=""><span th:text="#{dropdown.Assembly}"></span></option>
+              <option value=""><span th:text="#{dropdown.SportMen}"></span></option>
+              <option value=""><span th:text="#{dropdown.Trainer}"></span></option>
+            </select>
+            <input type="text" class="form-control" placeholder="Sozu elave edin" required>
+            <button type="submit" class="btn btn-primary">Axtar</button>
+          </form>
         </div>
       </div>
 
@@ -274,11 +280,13 @@
 
       <div class="row mt-4">
         <div class="col-md-6">
-          <p>Copyright 2022.</p>
         </div>
         <div class="col-md-6 text-right">
           <div class="sosmed-button">
-            <a href="https://www.facebook.com/NaxcivanMRKARETEDO/"><span class="mai-logo-facebook-f"></span></a>
+            <a href="#"><span class="mai-logo-facebook-f"></span></a>
+            <a href="#"><span class="mai-logo-twitter"></span></a>
+            <a href="#"><span class="mai-logo-youtube"></span></a>
+            <a href="#"><span class="mai-logo-linkedin"></span></a>
           </div>
         </div>
       </div>

@@ -62,7 +62,7 @@ public class TrainerController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/trainer/save")
     public ModelAndView getSavePage(){
-
+        System.out.println("leo");
         ModelAndView modelAndView= new ModelAndView("insert");
         modelAndView.addObject("name","Xəbərin Adı");
         modelAndView.addObject("description","Xəbərin məzmunu");

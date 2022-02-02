@@ -25,11 +25,9 @@ public class IndexController {
     public ModelAndView getIndex(){
         NewsModel newsModel = new NewsModel();
         List<News> news= newsRepository.findAll();
-        List<NewsModel> news1= new ArrayList<>();
 
         for (News n:news) {
             newsModel = new NewsModel();
-            System.out.println(n.getNewsName());
             newsModel.setId(n.getId());
             newsModel.setNewsName(n.getNewsName());
             newsModel.setNewsTitle(n.getNewsTitle());

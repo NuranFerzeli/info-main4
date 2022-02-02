@@ -1,6 +1,6 @@
 package com.firstnews.info.entity;
 
-public enum ArticleStatus {
+public enum Status {
     ACTIVE,
     DELETED,
     UPDATED

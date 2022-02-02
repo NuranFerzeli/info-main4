@@ -16,15 +16,26 @@ public class SportModel {
     private int age;
     private LocalDate dob;
     private String detailedInformation;
+    private String imageName;
 
-    public SportModel(String name, String surname, String fatherName, int age, LocalDate dob, String detailedInformation) {
+    public SportModel(String name, String surname, String fatherName, int age, LocalDate dob, String detailedInformation,String imageName) {
         this.name = name;
         this.surname = surname;
         this.fatherName = fatherName;
         this.age = age;
         this.dob = dob;
         this.detailedInformation = detailedInformation;
+        this.imageName=imageName;
     }
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+
 
     public String getName() {
         return name;

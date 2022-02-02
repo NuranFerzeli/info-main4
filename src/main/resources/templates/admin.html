@@ -6,11 +6,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <title>AdminPanel</title>
-
          <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Our Custom CSS bu css problem yaradir silsen normala donur  -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="/absnews/admin/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="wrapper">
@@ -19,33 +24,29 @@
                 <div class="sidebar-header">
                     <h3>AdminPanel</h3>
                 </div>
-
-
-
-
-                <ul class="list-unstyled components">
+                <ul class="list-unstyled components"  >
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.assembly}"></span></a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="/save"><span th:text="#{dropdown.Tinsert}"></span></a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Tupdate}"></span><</a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Tdelete}"></span><</a></li>
+                        <ul class="collapse list-unstyled" id="homeSubmenu" name="tedbir" >
+                            <li><a th:href="${'save?id='+ 1}" ><span th:text="#{dropdown.Tinsert}"></span></a></li>
+                            <li><a href="#"><span th:text="#{dropdown.Tupdate}"></span></a></li>
+                            <li><a href="#"><span th:text="#{dropdown.Tdelete}"></span></a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.trainer}"></span></a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="save"><span th:text="#{dropdown.Trinsert}"></span></a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Trupdate}"></span><</a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Trdelete}"></span><</a></li>
+                        <ul class="collapse list-unstyled" id="pageSubmenu" name="trainer">
+                            <li><a th:href="${'save?id='+ 2}" ><span th:text="#{dropdown.Trinsert}"></span></a></li>
+                            <li><a href="#"><span th:text="#{dropdown.Trupdate}"></span></a></li>
+                            <li><a href="#"><span th:text="#{dropdown.Trdelete}"></span></a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.sportmen}"></span></a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu1">
-                            <li><a href="/save"><span th:text="#{dropdown.Sinsert}"></span></a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Supdate}"></span><</a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Sdelete}"></span><</a></li>
+                        <ul class="collapse list-unstyled" id="pageSubmenu1" name="sport">
+                            <li><a th:href="${'save?id='+ 3}" name=""><span th:text="#{dropdown.Sinsert}"></span></a></li>
+                            <li><a href="#"><span th:text="#{dropdown.Supdate}"></span></a></li>
+                            <li><a href="#"><span th:text="#{dropdown.Sdelete}"></span></a></li>
                         </ul>
                     </li>
                     <li>
@@ -56,41 +57,113 @@
 
             <!-- Page Content Holder -->
             <div id="content">
-
-                <nav class="navbar navbar-default">
+                <nav class="navbar navbar-default"><form action="/search" method="post">
                     <div class="container-fluid">
-
                         <div class="navbar-header">
                             <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                                 <i class="glyphicon glyphicon-align-left"></i>
                                 <span>Menu</span>
                             </button>
-                        </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="/lgnmr">Cıxış</a></li>
-                            </ul>
+                            &nbsp;&nbsp;    &nbsp;&nbsp;
+
+                                    <label >Country</label>
+                                    <select style="  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;  " required>
+                                        <option value="">Seç</option>
+                                        <option value=""><span th:text="#{dropdown.SportMen}"></span></option>
+                                        <option value=""><span th:text="#{dropdown.Trainer}"></span></option>
+                                        <option value=""><span th:text="#{dropdown.Assembly}"></span></option>
+                                    </select>
+                            &nbsp;
+                                <label >Zip</label>
+                                <input type="text" style="  width:32%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;"  required>&nbsp;
+                                <button type="submit"   style="  background-color: #1d52e9;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+border-radius: 20px"  >Axtar</button>
+                            </form>
                         </div>
                     </div>
                 </nav>
                 <h2>Cədvəl</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
 
-                <div class="line"></div>
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
 
-                <h2>Lorem Ipsum Dolor</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                <div class="line"></div>
-
-                <h2>Lorem Ipsum Dolor</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                <div class="line"></div>
-
-                <h3>Lorem Ipsum Dolor</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <td> <a th:href="${'update?id='+ 4}"><i class="fas fa-edit"></i></a>
+                    <a th:href="${'delete?id='+ 4}"><i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>t dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</table>
             </div>
         </div>
 
