@@ -22,8 +22,8 @@ public class AssembleImages {
     @Column(name = "imageName",length = 400)
     String assembleName;
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private Status status;
+    @Column(name="status")
+    private byte status;
     @NotNull
     LocalDate cdate;
     @Column(name = "udate")

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Naxcivan MR KarateDo</title>
+
+    <!-- Icons font CSS-->
+    <link href="User/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="User/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link href="User/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="User/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="../User/css/main.css" rel="stylesheet" media="all">
+    <link href="../User/css/select.css" rel="stylesheet" media="all">
+    <link type="text/css" rel="stylesheet" href="../css/updateUser.css">
+</head>
+
+<body>
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+        <div class="card card-4">
+            <div class="card-body">
+                <h2 class="title">Düzəliş Et</h2>
+                <form action="update" method="POST">
+                    <div th:if="${deger}" th:each="sport:${sports}" >
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label"> Adı</label>
+                                <input class="input--style-4" type="text" name="name"  th:value="${sport.getName()}">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">SoyAdı</label>
+                                <input class="input--style-4" type="text" name="surName" th:value="${sport.getSurname()}">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Ata Adı</label>
+                                <input class="input--style-4" type="text" name="fatherName"  th:value="${sport.getFatherName()}">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Dogum Tarixi</label>
+                                <input class="input--style-4" type="text" name="dob"   th:value="${sport.getDob()}">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Image Name</label>
+                                <input class="input--style-4" type="text" name="imageName"   th:value="${sport.getImageName()}">
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Haqqinda</label>
+                            <textarea class="form-control"rows="12" style="width: 521px; height: 183px;"th:text="${sport.getDetailedInformation()}" name="detailedInformation"></textarea>
+                        </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="p-t-15">
+                                <button class="btn btn--radius-2 btn--blue" type="submit">Göndər
+                                </button>
+                                <button class="btn btn--radius-2 btn--blue"
+                                        onclick="location.href='main?start=0&fetchCount=15';"
+                                        type="button" style="margin-left: 180px">Bağla
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form action="updateTrainer" method="POST">
+                    <div th:if="${deger1}" th:each="trainer:${trainers}" >
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"> Adı</label>
+                                    <input class="input--style-4" type="text" name="name"  th:value="${trainer.getName()}">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">SoyAdı</label>
+                                    <input class="input--style-4" type="text" name="surName" th:value="${trainer.getSurname()}">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Ata Adı</label>
+                                    <input class="input--style-4" type="text" name="fatherName"  th:value="${trainer.getFatherName()}">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Dogum Tarixi</label>
+                                    <input class="input--style-4" type="text" name="dob"   th:value="${trainer.getDob()}">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Image Name</label>
+                                    <input class="input--style-4" type="text" name="imageName"   th:value="${trainer.getImageName()}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Haqqinda</label>
+                                <textarea class="form-control"rows="12" style="width: 521px; height: 183px;"th:text="${trainer.getDetailedInformation()}" name="detailedInformation"></textarea>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="p-t-15">
+                                <button class="btn btn--radius-2 btn--blue" type="submit">Göndər
+                                </button>
+                                <button class="btn btn--radius-2 btn--blue"
+                                        onclick="location.href='main?start=0&fetchCount=15';"
+                                        type="button" style="margin-left: 180px">Bağla
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+                <form action="updateSportMen" method="POST">
+                    <div th:if="${deger2}" th:each="sport:${sports}" >
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"> Adı</label>
+                                    <input class="input--style-4" type="text" name="name"  th:value="${sport.getName()}">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">SoyAdı</label>
+                                    <input class="input--style-4" type="text" name="surName" th:value="${sport.getSurname()}">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Ata Adı</label>
+                                    <input class="input--style-4" type="text" name="fatherName"  th:value="${sport.getFatherName()}">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Dogum Tarixi</label>
+                                    <input class="input--style-4" type="text" name="dob"   th:value="${sport.getDob()}">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Image Name</label>
+                                    <input class="input--style-4" type="text" name="imageName"   th:value="${sport.getImageName()}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Haqqinda</label>
+                                <textarea class="form-control"rows="12" style="width: 521px; height: 183px;"th:text="${sport.getDetailedInformation()}" name="detailedInformation"></textarea>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="p-t-15">
+                                <button class="btn btn--radius-2 btn--blue" type="submit">Göndər
+                                </button>
+                                <button class="btn btn--radius-2 btn--blue"
+                                        onclick="location.href='main?start=0&fetchCount=15';"
+                                        type="button" style="margin-left: 180px">Bağla
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Jquery JS-->
+<script src="../User/vendor/jquery/jquery.min.js"></script>
+<!-- Vendor JS-->
+<script src="../User/vendor/select2/select2.min.js"></script>
+<script src="../User/vendor/datepicker/moment.min.js"></script>
+<script src="../User/vendor/datepicker/daterangepicker.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../js/updateUser.js"></script>
+<!-- Main JS-->
+<script>
+    $('#password, #confirm_password').on('keyup', function () {
+        if ($('#password').val() == $('#confirm_password').val()) {
+            $('#message').html('Şifrə düzgündür').css('color', 'green');
+        } else
+            $('#message').html('Şifrəni doğrula').css('color', 'red');
+    });
+</script>
+<script src="../User/js/global.js"></script>
+
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

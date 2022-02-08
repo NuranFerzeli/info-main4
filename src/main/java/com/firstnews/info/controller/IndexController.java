@@ -23,7 +23,7 @@ public class IndexController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public ModelAndView getIndex(){
-        NewsModel newsModel = new NewsModel();
+        NewsModel newsModel = null;
         List<News> news= newsRepository.findAll();
 
         for (News n:news) {

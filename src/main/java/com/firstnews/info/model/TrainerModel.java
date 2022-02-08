@@ -13,20 +13,50 @@ public class TrainerModel {
     private String name;
     private String surname;
     private String fatherName;
-    private int age;
+    private Long id;
     private LocalDate dob;
     private String detailedInformation;
     private String imageName;
+    private LocalDate udate;
+    private LocalDate cdate;
 
-    public TrainerModel(String name, String surname, String fatherName, int age, LocalDate dob, String detailedInformation,String imageName) {
+    public TrainerModel(String name, String surname, String fatherName, Long id, LocalDate dob, String detailedInformation, String imageName, LocalDate cdate, LocalDate udate  ) {
         this.name = name;
         this.surname = surname;
         this.fatherName = fatherName;
-        this.age = age;
+        this.id = id;
         this.dob = dob;
         this.detailedInformation = detailedInformation;
         this.imageName=imageName;
+        this.cdate=cdate;
+        this.udate=udate;
+
     }
+    public LocalDate getUdate() {
+        return udate;
+    }
+
+    public void setUdate(LocalDate udate) {
+        this.udate = udate;
+    }
+
+    public LocalDate getCdate() {
+        return cdate;
+    }
+
+    public void setCdate(LocalDate cdate) {
+        this.cdate = cdate;
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getImageName() {
         return imageName;
     }
@@ -58,12 +88,12 @@ public class TrainerModel {
         this.fatherName = fatherName;
     }
 
-    public int getAge() {
-        return age;
+    public Long getAge() {
+        return id;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAge(Long id) {
+        this.id = id;
     }
 
     public LocalDate getDob() {

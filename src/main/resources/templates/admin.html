@@ -6,166 +6,164 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <title>AdminPanel</title>
-         <!-- Bootstrap CSS CDN -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
-        <!-- Our Custom CSS bu css problem yaradir silsen normala donur  -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--        &lt;!&ndash; Our Custom CSS bu css problem yaradir silsen normala donur  &ndash;&gt;-->
+<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="/absnews/admin/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div class="wrapper">
-            <!-- Sidebar Holder -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>AdminPanel</h3>
-                </div>
-                <ul class="list-unstyled components"  >
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.assembly}"></span></a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu" name="tedbir" >
-                            <li><a th:href="${'save?id='+ 1}" ><span th:text="#{dropdown.Tinsert}"></span></a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Tupdate}"></span></a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Tdelete}"></span></a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.trainer}"></span></a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu" name="trainer">
-                            <li><a th:href="${'save?id='+ 2}" ><span th:text="#{dropdown.Trinsert}"></span></a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Trupdate}"></span></a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Trdelete}"></span></a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.sportmen}"></span></a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu1" name="sport">
-                            <li><a th:href="${'save?id='+ 3}" name=""><span th:text="#{dropdown.Sinsert}"></span></a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Supdate}"></span></a></li>
-                            <li><a href="#"><span th:text="#{dropdown.Sdelete}"></span></a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/">Cixis</a>
-                    </li>
-                </ul>
-            </nav>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>AdminPanel</h3>
+            </div>
+            <ul class="list-unstyled components"  >
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.assembly}"></span></a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu" name="tedbir" >
+                        <li><a th:href="${'save?id='+ 1}" ><span th:text="#{dropdown.Tinsert}"></span></a></li>
+                        <li><a href="/tedbirler"><span th:text="#{dropdown.TShow}"></span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.trainer}"></span></a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu" name="trainer">
+                        <li><a th:href="${'save?id='+ 2}" ><span th:text="#{dropdown.Trinsert}"></span></a></li>
+                        <li><a href="/trainerler"><span th:text="#{dropdown.TrShow}"></span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.sportmen}"></span></a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu1" name="sport">
+                        <li><a th:href="${'save?id='+ 3}" name=""><span th:text="#{dropdown.Sinsert}"></span></a></li>
+                        <li><a href="/idmancilar"><span th:text="#{dropdown.SShow}"></span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/">Cixis</a>
+                </li>
+            </ul>
+        </nav>
 
-            <!-- Page Content Holder -->
-            <div id="content">
-                <nav class="navbar navbar-default"><form action="/search" method="post">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                <i class="glyphicon glyphicon-align-left"></i>
-                                <span>Menu</span>
-                            </button>
-                            &nbsp;&nbsp;    &nbsp;&nbsp;
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav>
+                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <span>Menu</span>
+                </button>
+                <br>
+                <br>
+                                    <form action="/" method="post">
+                                            <div class="input-group">
 
-                                    <label >Country</label>
-                                    <select style="  padding: 12px;
+                                                <select style="  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;  " required>
-                                        <option value="">Seç</option>
-                                        <option value=""><span th:text="#{dropdown.SportMen}"></span></option>
-                                        <option value=""><span th:text="#{dropdown.Trainer}"></span></option>
-                                        <option value=""><span th:text="#{dropdown.Assembly}"></span></option>
-                                    </select>
-                            &nbsp;
-                                <label >Zip</label>
-                                <input type="text" style="  width:32%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;"  required>&nbsp;
-                                <button type="submit"   style="  background-color: #1d52e9;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-border-radius: 20px"  >Axtar</button>
-                            </form>
-                        </div>
-                    </div>
-                </nav>
-                <h2>Cədvəl</h2>
-        <table class="table">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
-            </tbody>
-        </table>
+                                                    <option value="">Seçin</option>
+                                                    <option value=""><span th:text="#{dropdown.SportMen}" th:href="${'update?id='+ 4}"></span></option>
+                                                    <option value=""><span th:text="#{dropdown.Trainer}"></span></option>
+                                                    <option value=""><span th:text="#{dropdown.Assembly}"></span></option>
+                                                </select><br>
+                                                <input type="search" class="form-control form-control-dark " placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                                <button type="submit" class="btn btn-outline-primary">search</button>
+                                            </div>
+                                    </form>
 
-        <table class="table">
-            <thead class="thead-light">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
 
-                <td> <a th:href="${'update?id='+ 4}"><i class="fas fa-edit"></i></a>
-                    <a th:href="${'delete?id='+ 4}"><i class="fas fa-trash"></i>
+<!--                        <input type="text" style="  width:32%;-->
+<!--  padding: 12px;-->
+<!--  border: 1px solid #ccc;-->
+<!--  border-radius: 4px;-->
+<!--  resize: vertical;"  required>&nbsp;-->
+<!--                        <button type="submit"   style="  background-color: #1d52e9;-->
+<!--  border: none;-->
+<!--  color: white;-->
+<!--  padding: 15px 32px;-->
+<!--  text-align: center;-->
+<!--  text-decoration: none;-->
+<!--  display: inline-block;-->
+<!--  font-size: 16px;-->
+<!--  margin: 4px 2px;-->
+<!--  cursor: pointer;-->
+<!--border-radius: 20px"  >Axtar</button>-->
+
+
+    </nav>
+    <h2>Cədvəl</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm" id="orderTable">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Adı</th>
+                        <th>Soyadı</th>
+                        <th>Ata adı</th>
+                        <th>Dogum tarix</th>
+                        <th>Haqqinda </th>
+                        <th>Sekil Adi</th>
+                        <th>Yarandigi  tarix</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <div th:if="${deger1}">
+                    <tr th:each="sport:${sports} ">
+                        <td th:text="${sport.getId()}"></td>
+                        <td th:text="${sport.getName()}"></td>
+                        <td th:text="${sport.getSurname()}"></td>
+                        <td th:text="${sport.getFatherName()}"></td>
+                        <td th:text="${sport.getDob()}"></td>
+                        <td th:text="${sport.getDetailedInformation()}"></td>
+                        <td th:text="${sport.getImageName()}"></td>
+                        <td th:text="${sport.getCdate()}"></td>
+                        <td class="td-actions">
+                            <a th:title="' Düzəlt'" th:href="${ 'sport2?id=' + sport.getId()}">
+                                <i class="fas fa-edit" style="color: #016be9" ></i>
+                            </a>
+                            <a th:title="' Sil'" th:href="${ 'sport3?id=' + sport.getId()}">
+                                <i class="fas fa-trash" style="color: #016be9"  ></i>
+                            </a>
+                        </td>
+                    </tr></div>
+            <div th:if="${deger2}">
+                <tr th:each="trainer:${trainers}">
+                    <td th:text="${trainer.getId()}"></td>
+                    <td th:text="${trainer.getName()}"></td>
+                    <td th:text="${trainer.getSurname()}"></td>
+                    <td th:text="${trainer.getFatherName()}"></td>
+                    <td th:text="${trainer.getDob()}"></td>
+                    <td th:text="${trainer.getImageName()}"></td>
+                    <td th:text="${trainer.getCdate()}"></td>
+                    <td  th:title="' Düzəlt'" class="td-actions" > <a
+                            th:href="${'trainer2?id='+ trainer.getId()}"><i class="fas fa-edit" style="color: #016be9"></i>
                     </a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
-            </tbody>t dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</table>
+                        <a  th:title="'  Sil'" th:href="${ 'trainer3?id=' + trainer.getId()}">
+                            <i class="fas fa-trash" style="color: #016be9"></i>
+                        </a>
+                    </td>
+                </tr>
             </div>
-        </div>
+                    </tbody>
+                </table><div>
+                <div class="btn-group mr-2">
+                    <button type="button" id="previous" class="btn btn-primary mb-2">
+                        <span>Əvvəlki</span></button>
+                    <button type="button" id="next" class="btn btn-secondary mb-2"><span>Növbəti</span>
+                    </button>
+                </div>
+            </div>
+
+            </div>
+            </div>
+
 
 
 
@@ -174,7 +172,7 @@ border-radius: 20px"  >Axtar</button>
         <!-- jQuery CDN -->
          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
          <!-- Bootstrap Js CDN -->
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
          <script type="text/javascript">
              $(document).ready(function () {

@@ -27,7 +27,7 @@ public class FederationController {
 
         newsList.addAll( federationRepository.findAll());
         for(Federation n:newsList){
-           // federation.setImagePath(n.getNewsTitle());
+            // federation.setImagePath(n.getNewsTitle());
             federation.setName(n.getName());
             federation.setText(n.getText());
             federation.setImagePath(n.getImagePath());
@@ -46,4 +46,3 @@ public class FederationController {
 
     }
 }
-

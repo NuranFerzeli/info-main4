@@ -36,25 +36,25 @@
           <input type="text" class="form-control" id="firstName" name="name"  required>
         </div>
 
-        <div class="form-group">
+        <div class="form-group"  th:if="${deger}">
           <label >Surname</label>
           <input type="text" class="form-control" id="surName" name="surName"   >
         </div>
-        <div class="form-group">
+        <div class="form-group" th:if="${deger}">
           <label >FatherName</label>
           <input type="text" class="form-control" id="father" name="fatherName" >
         </div>
         <div class="form-group">
-          <label >Doğum Tarixi</label>
+          <label >Tarix</label>
           <input type="date" class="form-control" id="date" name="date"  required>
         </div>
         <div class="form-group">
-          <label >Haqqımda</label>
+          <label >Haqqında</label>
           <textarea class="form-control" id="exampleFormControlTextarea1"  name="detailedİnformation" rows="10"></textarea>
         </div>
-        <div class="form-group">
-          <input type="radio" id="html" name="fav_language" value="Kisi"><label for="html">Kişi</label><br>
-          <input type="radio" id="css" name="fav_language" value="Qadin"> <label for="css">Qadın</label><br>
+        <div class="form-group" th:if="${deger}">
+          <input type="radio" id="html" name="cinsi" value="Kisi"><label for="html">Kişi</label><br>
+          <input type="radio" id="css" name="cinsi" value="Qadin"> <label for="css">Qadın</label><br>
         </div>
 <!--        <div class="form-group">-->
 <!--          <label class="label">Sekil elave Et</label>-->

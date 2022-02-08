@@ -13,19 +13,59 @@ public class SportModel {
     private String name;
     private String surname;
     private String fatherName;
-    private int age;
     private LocalDate dob;
     private String detailedInformation;
     private String imageName;
 
-    public SportModel(String name, String surname, String fatherName, int age, LocalDate dob, String detailedInformation,String imageName) {
+    public byte getStatus() {
+        return status;
+    }
+
+    public void setStatus(byte status) {
+        this.status = status;
+    }
+
+    private byte status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    private Long id;
+
+    public LocalDate getUdate() {
+        return udate;
+    }
+
+    public void setUdate(LocalDate udate) {
+        this.udate = udate;
+    }
+
+    public LocalDate getCdate() {
+        return cdate;
+    }
+
+    public void setCdate(LocalDate cdate) {
+        this.cdate = cdate;
+    }
+
+    private LocalDate udate;
+    private LocalDate cdate;
+
+    public SportModel(String name, String surname, String fatherName, Long id, LocalDate dob, String detailedInformation,String imageName,LocalDate cdate,LocalDate udate) {
         this.name = name;
         this.surname = surname;
         this.fatherName = fatherName;
-        this.age = age;
+        this.id = id;
         this.dob = dob;
         this.detailedInformation = detailedInformation;
         this.imageName=imageName;
+        this.udate=udate;
+        this.cdate=cdate;
     }
     public String getImageName() {
         return imageName;
@@ -59,14 +99,6 @@ public class SportModel {
 
     public void setFatherName(String fatherName) {
         this.fatherName = fatherName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public LocalDate getDob() {

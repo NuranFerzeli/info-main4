@@ -21,6 +21,5 @@ public class Federation {
     private String imagePath;
     @Column(name = "name",length=4000)
     private String name;
-    @Column(name="st")
-    private boolean status;
+
 }

@@ -28,8 +28,11 @@ public class Trainer {
     LocalDate dob;
     @Column(name="deteailedInformation",length=4000)
     String detailedInformation;
-    @Column(name="status")
-    private Boolean status;
+    @Column(name="status_id")
+    private Long status_id;
     @Column(name = "imagePath",length=400)
     private String imagePath;
+    LocalDate cdate;
+    @Column(name = "udate")
+    LocalDate udate;
 }
