@@ -2,7 +2,7 @@
   <artifact type="jar" name="info:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/info_jar</output-path>
     <root id="archive" name="info.jar">
-      <element id="module-output" name="info" />
+      <element id="module-output" name="admin" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.28.Final/hibernate-core-5.4.28.Final.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-aop/2.4.3/spring-boot-starter-aop-2.4.3.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar" path-in-jar="/" />

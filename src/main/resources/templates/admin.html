@@ -29,25 +29,25 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.assembly}"></span></a>
                     <ul class="collapse list-unstyled" id="homeSubmenu" name="tedbir" >
                         <li><a th:href="${'save?id='+ 1}" ><span th:text="#{dropdown.Tinsert}"></span></a></li>
-                        <li><a href="/tedbirler"><span th:text="#{dropdown.TShow}"></span></a></li>
+                        <li><a href="/adm/assembly"><span th:text="#{dropdown.TShow}"></span></a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.trainer}"></span></a>
                     <ul class="collapse list-unstyled" id="pageSubmenu" name="trainer">
                         <li><a th:href="${'save?id='+ 2}" ><span th:text="#{dropdown.Trinsert}"></span></a></li>
-                        <li><a href="/trainerler"><span th:text="#{dropdown.TrShow}"></span></a></li>
+                        <li><a href="/adm/trainerler"><span th:text="#{dropdown.TrShow}"></span></a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false"><span th:text="#{menu.sportmen}"></span></a>
                     <ul class="collapse list-unstyled" id="pageSubmenu1" name="sport">
                         <li><a th:href="${'save?id='+ 3}" name=""><span th:text="#{dropdown.Sinsert}"></span></a></li>
-                        <li><a href="/idmancilar"><span th:text="#{dropdown.SShow}"></span></a></li>
+                        <li><a href="/adm/idmancilar"><span th:text="#{dropdown.SShow}"></span></a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/">Cixis</a>
+                    <a href="/logout">Cixis</a>
                 </li>
             </ul>
         </nav>
@@ -61,7 +61,7 @@
                 </button>
                 <br>
                 <br>
-                                    <form action="/" method="post">
+                                    <form action="/adm/search" method="post">
                                             <div class="input-group">
 
                                                 <select style="  padding: 12px;
@@ -125,10 +125,10 @@
                         <td th:text="${sport.getImageName()}"></td>
                         <td th:text="${sport.getCdate()}"></td>
                         <td class="td-actions">
-                            <a th:title="' Düzəlt'" th:href="${ 'sport2?id=' + sport.getId()}">
+                            <a th:title="' Düzəlt'" th:href="${ '/adm/sport2?id=' + sport.getId()}">
                                 <i class="fas fa-edit" style="color: #016be9" ></i>
                             </a>
-                            <a th:title="' Sil'" th:href="${ 'sport3?id=' + sport.getId()}">
+                            <a th:title="' Sil'" th:href="${ '/adm/sport3?id=' + sport.getId()}">
                                 <i class="fas fa-trash" style="color: #016be9"  ></i>
                             </a>
                         </td>
@@ -143,9 +143,9 @@
                     <td th:text="${trainer.getImageName()}"></td>
                     <td th:text="${trainer.getCdate()}"></td>
                     <td  th:title="' Düzəlt'" class="td-actions" > <a
-                            th:href="${'trainer2?id='+ trainer.getId()}"><i class="fas fa-edit" style="color: #016be9"></i>
+                            th:href="${'/adm/trainer2?id='+ trainer.getId()}"><i class="fas fa-edit" style="color: #016be9"></i>
                     </a>
-                        <a  th:title="'  Sil'" th:href="${ 'trainer3?id=' + trainer.getId()}">
+                        <a  th:title="'  Sil'" th:href="${ '/adm/trainer3?id=' + trainer.getId()}">
                             <i class="fas fa-trash" style="color: #016be9"></i>
                         </a>
                     </td>

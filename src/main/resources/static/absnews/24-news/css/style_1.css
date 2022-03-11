@@ -699,6 +699,7 @@ a, a:hover {
     position: absolute;
     top: 60px;
     left: -5px
+
 }
 
 .footer_img_post_6 {
@@ -740,7 +741,7 @@ a, a:hover {
 }
 
 .fh5co_footer_right_reserved {
-    background: #000 !important;
+    background: #33374b !important;
     color: #fff !important
 }
 
@@ -757,11 +758,6 @@ a, a:hover {
     border-color: #FFFFFF;
 }
 
-.contact_us_bg_img {
-    background: url(../images/photo-1449157291145-7efd050a4d0e-578x362.jpg);
-    padding: 100px 0;
-    background-size: cover
-}
 
 .fh5co_con {
     font-size: 24px;

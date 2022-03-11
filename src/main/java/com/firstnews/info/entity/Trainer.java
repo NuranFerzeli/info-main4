@@ -26,7 +26,7 @@ public class Trainer {
     int age;
     @Column(name = "dob")
     LocalDate dob;
-    @Column(name="deteailedInformation",length=4000)
+    @Column(name="deteailedInformation",length=50000)
     String detailedInformation;
     @Column(name="status_id")
     private Long status_id;

@@ -52,10 +52,14 @@
           <label >Haqqında</label>
           <textarea class="form-control" id="exampleFormControlTextarea1"  name="detailedİnformation" rows="10"></textarea>
         </div>
-        <div class="form-group" th:if="${deger}">
-          <input type="radio" id="html" name="cinsi" value="Kisi"><label for="html">Kişi</label><br>
-          <input type="radio" id="css" name="cinsi" value="Qadin"> <label for="css">Qadın</label><br>
+        <div class="form-group" th:if="${deger1}">
+          <label >Qısa Məlumat</label>
+          <textarea class="form-control"   name="shortInfo" rows="5" required></textarea>
         </div>
+<!--        <div class="form-group" th:if="${deger}">-->
+<!--          <input type="radio" id="html" name="cinsi" value="Kisi"><label for="html">Kişi</label><br>-->
+<!--          <input type="radio" id="css" name="cinsi" value="Qadin"> <label for="css">Qadın</label><br>-->
+<!--        </div>-->
 <!--        <div class="form-group">-->
 <!--          <label class="label">Sekil elave Et</label>-->
 <!--          <label>-->
@@ -68,19 +72,17 @@
             <input type="file"  name="image" multiple="multiple">
           </label>
         </div>
+        <div class="form-group" th:if="${deger1}">
+          <label class="label">Tedbir ucun sekil elave Et</label>
+          <label>
+            <input type="file"  name="tedbirPhoto">
+          </label>
+        </div>
           <hr class="mb-4">
           <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
         </form>
     </div>
   </div>
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2020-2021 Company Name</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
 </div>
 <script src="//github.com/fyneworks/multifile/blob/master/jQuery.MultiFile.min.js" type="text/javascript" language="javascript"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>

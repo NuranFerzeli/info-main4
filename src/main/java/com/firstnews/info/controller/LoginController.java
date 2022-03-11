@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 
-    @RequestMapping(method = RequestMethod.GET , value = "/lgnmr")
+    @RequestMapping(method = RequestMethod.GET , value = "/")
     public String getLogin(){
         return "login.html";
     }

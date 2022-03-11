@@ -1,37 +1,48 @@
-/*
+
 package com.firstnews.info.configuration;
 
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+
+import javax.sql.DataSource;
+@Configuration
 @EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
+public class SecurityConfiguration  extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private UserDetailsService userDetailsService1;
+
+    @Bean
+    AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider provider
+                = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(userDetailsService1);
+        provider.setPasswordEncoder(new BCryptPasswordEncoder());
+        return  provider;
     }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-       http
-                .csrf().disable()
-                .httpBasic().and()
+        http
                 .authorizeRequests()
-                .antMatchers("/admin/**").hasAuthority("ADMIN")
-                .antMatchers("/**").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers( "/adm/**","/media-files/**").authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/lgnmr").failureUrl("/adminLogin?error=true")
-                .defaultSuccessUrl("/admin1")
-                .usernameParameter("email")
-                .passwordParameter("password")
-                .and().logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/adminLogin?logout=true").and().exceptionHandling()
-                .accessDeniedPage("/accessdenied");
-    }
-}
-*/
+                .formLogin().loginPage("/").usernameParameter("username").passwordParameter("pass").permitAll()
+                .loginProcessingUrl("/loginprocessing")
+                .defaultSuccessUrl("/adm/trainerler")
+                .failureUrl("/denied")
+                .and()
+                .logout().logoutUrl("/logout").logoutSuccessUrl("/").deleteCookies("JSESSIONID").invalidateHttpSession(true).clearAuthentication(true).permitAll()
+                .and()
+                .csrf().disable();
+}}
